@@ -1,50 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VisualHand Dummy MVP</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisualHand Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #0ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5em;
+      border-bottom: 2px solid #0ff;
+    }
+    nav {
+      background: #111;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #0ff;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 0 10px #0ff;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 10px;
+      border-top: 2px solid #0ff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>VisualHand MVP</h1>
 
-    <section class="card">
-      <h2>Login</h2>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button>Login</button>
-    </section>
+  <header>
+    VisualHand Home
+  </header>
 
-    <section class="card">
-      <h2>Send Alert</h2>
-      <select>
-        <option value="gbv">GBV</option>
-        <option value="theft">Theft</option>
-        <option value="health">Health</option>
-      </select>
-      <input type="text" placeholder="Short message" />
-      <button>Submit Alert</button>
-    </section>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="report.html">Reports</a>
+    <a href="admin.html">Admin</a>
+  </nav>
 
-    <section class="card">
-      <h2>Dashboard</h2>
-      <ul>
-        <li>🚨 GBV Alert – Durban CBD – 1 min ago</li>
-        <li>💊 Health Alert – Umlazi – 5 min ago</li>
-        <li>🔒 Theft Alert – Ntuzuma – 10 min ago</li>
-      </ul>
-    </section>
+  <main>
+    <div class="card">
+      <h2>Welcome to VisualHand</h2>
+      <p>Your all-in-one safety and emergency response system.</p>
+    </div>
 
-    <section class="card">
-      <h2>Safe Mode / OTP Deactivation</h2>
-      <input type="text" placeholder="Enter OTP" />
-      <button>Deactivate</button>
-    </section>
-  </div>
+    <div class="card">
+      <h2>Features</h2>
+      <p>✔ Panic SOS Alerts<br>
+         ✔ Real-time GPS Tracking<br>
+         ✔ Tamper-proof Deactivation<br>
+         ✔ Vital Data Broadcasting</p>
+    </div>
+  </main>
 
-  <script src="app.js"></script>
+  <footer>
+    &copy; 2025 VisualHand | All Rights Reserved
+  </footer>
+
 </body>
 </html>
