@@ -3,49 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VisualHand Demo</title>
-  <link rel="stylesheet" href="style.css">
+  <title>VisualHand - Login</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="container">
+    <img src="assets/logo.png" alt="VisualHand Logo" class="logo">
     <h1>VisualHand</h1>
-    <h2>Login / Signup</h2>
-
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-
-    <button onclick="login()">Login</button>
-    <button onclick="signup()">Signup</button>
-
-    <p id="message"></p>
+    <div class="auth-box">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <button onclick="signup()">Signup</button>
+      <p id="message"></p>
+    </div>
   </div>
-
-  <script type="module">
-    import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from './firebase-config.js';
-
-    const msg = document.getElementById("message");
-
-    window.login = async () => {
-      const email = document.getElementById("email").value;
-      const pass = document.getElementById("password").value;
-      try {
-        await signInWithEmailAndPassword(auth, email, pass);
-        window.location.href = "dashboard.html";
-      } catch (err) {
-        msg.textContent = err.message;
-      }
-    };
-
-    window.signup = async () => {
-      const email = document.getElementById("email").value;
-      const pass = document.getElementById("password").value;
-      try {
-        await createUserWithEmailAndPassword(auth, email, pass);
-        window.location.href = "dashboard.html";
-      } catch (err) {
-        msg.textContent = err.message;
-      }
-    };
-  </script>
+  <script src="js/auth.js"></script>
 </body>
 </html>
