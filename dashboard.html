@@ -3,32 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <title>VisualHand - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>VisualHand Dashboard</h1>
-    <p id="welcome"></p>
+  <header>
+    <h1>Dashboard</h1>
     <button onclick="logout()">Logout</button>
-  </div>
-
-  <script type="module">
-    import { auth, onAuthStateChanged, signOut } from './firebase-config.js';
-
-    const welcome = document.getElementById("welcome");
-
-    onAuthStateChanged(auth, user => {
-      if (user) {
-        welcome.textContent = `Welcome, ${user.email}`;
-      } else {
-        window.location.href = "index.html";
-      }
-    });
-
-    window.logout = async () => {
-      await signOut(auth);
-    };
-  </script>
+  </header>
+  <main class="dashboard">
+    <div class="card left">
+      <h2>Send Alert</h2>
+      <button onclick="sendAlert()">Emergency</button>
+    </div>
+    <div class="card center">
+      <h2>Nearby Contacts</h2>
+      <ul id="contacts">
+        <li>Alice</li>
+        <li>Bob</li>
+        <li>Charlie</li>
+      </ul>
+    </div>
+    <div class="card right">
+      <h2>Reports</h2>
+      <a href="reports.html">View Reports</a>
+    </div>
+  </main>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
