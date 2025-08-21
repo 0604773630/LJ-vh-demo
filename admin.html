@@ -2,18 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Admin Area</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisualHand Admin</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       background-color: #000;
       color: #0ff;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5em;
+      border-bottom: 2px solid #0ff;
+    }
+    nav {
+      background: #111;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    main {
       padding: 20px;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #0ff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #0ff;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 10px;
+      border-top: 2px solid #0ff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <h2>🔐 Admin Area (Dummy Only)</h2>
-  <p>This section is for future admin tools. No real login is required for now.</p>
+
+  <header>
+    VisualHand Admin Panel
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="report.html">Reports</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+  <main>
+    <div class="card">
+      <h2>User Management</h2>
+      <p>View, edit, or remove users here.</p>
+    </div>
+
+    <div class="card">
+      <h2>Alerts Dashboard</h2>
+      <p>Monitor live SOS alerts and system activity.</p>
+    </div>
+
+    <div class="card">
+      <h2>Settings</h2>
+      <p>Configure system preferences and access controls.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 VisualHand | Admin Dashboard
+  </footer>
+
 </body>
 </html>
