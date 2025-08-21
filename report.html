@@ -2,31 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Report Case</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisualHand Reports</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       background-color: #000;
       color: #0ff;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5em;
+      border-bottom: 2px solid #0ff;
+    }
+    nav {
+      background: #111;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    main {
       padding: 20px;
     }
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 8px;
-      border: none;
+    .card {
+      background: #111;
+      border: 1px solid #0ff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #0ff;
     }
-    button { background-color: #0ff; color: #000; }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 10px;
+      border-top: 2px solid #0ff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #0ff;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h2>Report GBV / Crime Case (Dummy)</h2>
-  <form onsubmit="alert('Report Submitted (dummy)'); return false;">
-    <input type="text" placeholder="Your Name" required>
-    <input type="text" placeholder="Location" required>
-    <textarea placeholder="Describe the incident..." rows="5" required></textarea>
-    <button type="submit">Submit Report</button>
-  </form>
+
+  <header>
+    VisualHand Reports
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="report.html">Reports</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+  <main>
+    <div class="card">
+      <h2>Incident Reports</h2>
+      <p>Here you can view and track submitted alerts.</p>
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>User</th>
+          <th>Location</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>001</td>
+          <td>Jane Doe</td>
+          <td>Durban</td>
+          <td>Resolved</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>John Smith</td>
+          <td>Cape Town</td>
+          <td>Pending</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 VisualHand | Reports
+  </footer>
+
 </body>
 </html>
