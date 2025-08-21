@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VisualHand Dummy MVP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>VisualHand MVP</h1>
+
+    <section class="card">
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button>Login</button>
+    </section>
+
+    <section class="card">
+      <h2>Send Alert</h2>
+      <select>
+        <option value="gbv">GBV</option>
+        <option value="theft">Theft</option>
+        <option value="health">Health</option>
+      </select>
+      <input type="text" placeholder="Short message" />
+      <button>Submit Alert</button>
+    </section>
+
+    <section class="card">
+      <h2>Dashboard</h2>
+      <ul>
+        <li>🚨 GBV Alert – Durban CBD – 1 min ago</li>
+        <li>💊 Health Alert – Umlazi – 5 min ago</li>
+        <li>🔒 Theft Alert – Ntuzuma – 10 min ago</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Safe Mode / OTP Deactivation</h2>
+      <input type="text" placeholder="Enter OTP" />
+      <button>Deactivate</button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
