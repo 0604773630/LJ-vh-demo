@@ -1,88 +1,33 @@
-/* === Global Styles === */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #1C1C1C; /* Charcoal Titanium */
-  color: #DADADA;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* === Header & Footer === */
-header, footer {
-  background: #2B2B2B; /* Dark panels */
-  padding: 15px;
+  background: black;
+  color: neonblue;
+  font-family: Arial, sans-serif;
   text-align: center;
-  border-bottom: 2px solid #00F0FF;
-  border-top: 2px solid #FF00F5;
-  font-weight: bold;
-  font-size: 1.2em;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-/* === Navigation === */
-nav {
-  background: #2B2B2B;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px;
-  border-bottom: 2px solid #FF00F5;
-}
-
-nav a {
-  color: #00F0FF;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: all 0.2s ease;
-}
-
-nav a:hover {
-  color: #FF00F5;
-  box-shadow: 0 0 8px #00F0FF, 0 0 12px #FF00F5;
-}
-
-/* === Main Content === */
-main {
-  padding: 80px 20px 60px; /* top padding for header, bottom for footer */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-/* === Cards / Panels === */
-.card {
-  background: #2B2B2B;
-  border: 1px solid #00F0FF;
-  border-radius: 12px;
+.container {
+  margin-top: 100px;
   padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 0 15px #00F0FF, 0 0 10px #FF00F5 inset;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid neonblue;
+  border-radius: 15px;
+  display: inline-block;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px #00F0FF, 0 0 15px #FF00F5 inset;
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
 }
 
-/* === Tables === */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+button {
+  background: neonblue;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
-
-table, th, td {
-  border
