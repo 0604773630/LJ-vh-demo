@@ -2,38 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VisualHand - Reports</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Reports</h1>
-    <a href="dashboard.html">Back to Dashboard</a>
-  </header>
-  <main class="reports">
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Type</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2025-08-21</td>
-          <td>Emergency Alert</td>
-          <td>Resolved</td>
-        </tr>
-        <tr>
-          <td>2025-08-20</td>
-          <td>Check-in</td>
-          <td>OK</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
-  <script src="js/reports.js"></script>
+  <div class="container">
+    <h1>Alert Reports</h1>
+    <ul id="reportList"></ul>
+  </div>
 </body>
 </html>
