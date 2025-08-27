@@ -2,33 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VisualHand - Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>Dashboard</h1>
-    <button onclick="logout()">Logout</button>
-  </header>
-  <main class="dashboard">
-    <div class="card left">
-      <h2>Send Alert</h2>
-      <button onclick="sendAlert()">Emergency</button>
-    </div>
-    <div class="card center">
-      <h2>Nearby Contacts</h2>
-      <ul id="contacts">
-        <li>Alice</li>
-        <li>Bob</li>
-        <li>Charlie</li>
-      </ul>
-    </div>
-    <div class="card right">
-      <h2>Reports</h2>
-      <a href="reports.html">View Reports</a>
-    </div>
-  </main>
-  <script src="js/dashboard.js"></script>
+  <div class="container">
+    <h1>Dashboard - Active Alerts</h1>
+    <ul id="alertsList"></ul>
+  </div>
 </body>
 </html>
