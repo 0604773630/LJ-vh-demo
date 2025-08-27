@@ -1,19 +1,83 @@
-// Highlight current nav link
-const links = document.querySelectorAll("nav a");
-links.forEach(link => {
-  if (link.href === window.location.href) {
-    link.style.color = "#FF00F5";
-    link.style.boxShadow = "0 0 8px #00F0FF, 0 0 12px #FF00F5";
-  }
-});
+import { db } from './firebase-config.js';
+import { collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, updateDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 
-// Optional: simple button click feedback
-const buttons = document.querySelectorAll("button");
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.style.transform = "scale(0.95)";
-    setTimeout(() => btn.style.transform = "scale(1)", 150);
+// Reference to alerts collection
+const alertsRef = collection(db, 'alerts');
+
+// SOS button logic
+const sosBtn = document.getElementById('sosBtn');
+const status = document.getElementById('status');
+
+if (sosBtn) {
+  sosBtn.addEventListener('click', async () => {
+    try {
+      await addDoc(alertsRef, {
+        timestamp: serverTimestamp(),
+        status: 'active',
+        location: 'Unknown'
+      });
+      status.textContent = "SOS Alert Sent!";
+      status.style.color = "#0ff";
+    } catch (err) {
+      console.error(err);
+      status.textContent = "Error sending alert!";
+      status.style.color = "#f00";
+    }
   });
-});
+}
 
-console.log("VisualHand app.js loaded");
+// Real-time dashboard listener
+const alertsList = document.getElementById('alertsList');
+if (alertsList) {
+  const q = query(alertsRef, orderBy('timestamp', 'desc'));
+  onSnapshot(q, (snapshot) => {
+    alertsList.innerHTML = '';
+    snapshot.forEach(docItem => {
+      const alert = docItem.data();
+      const li = document.createElement('li');
+      const time = alert.timestamp?.toDate().toLocaleTimeString() || "Just now";
+      li.textContent = `[${time}] Status: ${alert.status} | Location: ${alert.location}`;
+      li.style.color = "#0ff";
+      alertsList.appendChild(li);
+    });
+  });
+}
+
+// Admin page logic
+const adminList = document.getElementById('adminList');
+if (adminList) {
+  const q = query(alertsRef, orderBy('timestamp', 'desc'));
+  onSnapshot(q, (snapshot) => {
+    adminList.innerHTML = '';
+    snapshot.forEach(docItem => {
+      const alert = docItem.data();
+      const li = document.createElement('li');
+      const time = alert.timestamp?.toDate().toLocaleString() || "Just now";
+      li.innerHTML = `[${time}] Status: ${alert.status} | Location: ${alert.location} <button data-id="${docItem.id}">Resolve</button>`;
+      li.style.color = "#0ff";
+      adminList.appendChild(li);
+
+      const btn = li.querySelector('button');
+      btn.addEventListener('click', async () => {
+        await updateDoc(doc(db, 'alerts', docItem.id), { status: 'resolved' });
+      });
+    });
+  });
+}
+
+// Report page logic
+const reportList = document.getElementById('reportList');
+if (reportList) {
+  const q = query(alertsRef, orderBy('timestamp', 'desc'));
+  onSnapshot(q, (snapshot) => {
+    reportList.innerHTML = '';
+    snapshot.forEach(docItem => {
+      const alert = docItem.data();
+      const li = document.createElement('li');
+      const time = alert.timestamp?.toDate().toLocaleString() || "Just now";
+      li.textContent = `[${time}] Status: ${alert.status} | Location: ${alert.location}`;
+      li.style.color = "#0ff";
+      reportList.appendChild(li);
+    });
+  });
+                                                                        }
